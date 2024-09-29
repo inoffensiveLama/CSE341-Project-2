@@ -1,9 +1,9 @@
-const pokemonController = {};
+const typesController = {};
 const mongodb = require("../data/database");
 const ObjectID = require("mongodb").ObjectId;
 
 
-pokemonController.getAll = async (req, res) => {
+typesController.getAll = async (req, res) => {
     const result = await mongodb.getDatabase().db().collection("contacts").find();
     result.toArray().then((contacts) => {
         res.setHeader("Content-Type", "application/json");
@@ -12,7 +12,7 @@ pokemonController.getAll = async (req, res) => {
 };
 
 
-pokemonController.getSingle = async(req, res) => {
+typesController.getSingle = async(req, res) => {
     const contactsId = new ObjectID(req.params.id);
     const result = await mongodb.getDatabase().db().collection("contacts").find({_id: contactsId});
     result.toArray().then((contacts) => {
@@ -22,4 +22,4 @@ pokemonController.getSingle = async(req, res) => {
 };
 
 
-module.exports = pokemonController;
+module.exports = typesController;
