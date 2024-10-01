@@ -1,0 +1,220 @@
+[
+    {
+        "type_id": 1,
+        "name": "Normal",
+        "weaknesses": [
+            "Fighting"
+        ],
+        "strengths": [
+
+        ],
+        "effectless": [
+            "Ghost"
+        ]
+    },{
+        "type_id": 2,
+        "name": "Fighting",
+        "weaknesses": [
+            "Flying",
+            "Psychic"
+        ],
+        "strengths": [
+            "Rock"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 3,
+        "name": "Flying",
+        "weaknesses": [
+            "Electric",
+            "Ice",
+            "Rock"
+        ],
+        "strengths": [
+            "Bug",
+            "Fighting",
+            "Grass"
+        ],
+        "effectless": [
+            "Ground"
+        ]
+    },{
+        "type_id": 4,
+        "name": "Poison",
+        "weaknesses": [
+            "Bug",
+            "Ground",
+            "Psychic"
+        ],
+        "strengths": [
+            "Grass",
+            "Poison"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 5,
+        "name": "Ground",
+        "weaknesses": [
+            "Grass",
+            "Ice",
+            "Water"
+        ],
+        "strengths": [
+            "Poison"
+        ],
+        "effectless": [
+            "Electric"
+        ]
+    },{
+        "type_id": 6,
+        "name": "Rock",
+        "weaknesses": [
+            "Fighting",
+            "Grass",
+            "Ground",
+            "Water"
+        ],
+        "strengths": [
+            "Bug",
+            "Fire",
+            "Flying",
+            "Poison",
+            "Rock"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 7,
+        "name": "Bug",
+        "weaknesses": [
+            "Fire",
+            "Flying",
+            "Poison",
+            "Rock"
+        ],
+        "strengths": [
+            "Grass"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 8,
+        "name": "Ghost",
+        "weaknesses": [
+
+        ],
+        "strengths": [
+
+        ],
+        "effectless": [
+            "Fighting",
+            "Normal"
+        ]
+    },{
+        "type_id": 9,
+        "name": "Fire",
+        "weaknesses": [
+            "Ground",
+            "Rock",
+            "Water"
+        ],
+        "strengths": [
+            "Bug",
+            "Grass"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 10,
+        "name": "Water",
+        "weaknesses": [
+            "Electric",
+            "Grass"
+        ],
+        "strengths": [
+            "Fire",
+            "Ice"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 11,
+        "name": "Grass",
+        "weaknesses": [
+            "Bug",
+            "Fire",
+            "Flying",
+            "Ice",
+            "Poison"
+        ],
+        "strengths": [
+            "Electric",
+            "Grass",
+            "Ground",
+            "Water"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 12,
+        "name": "Electric",
+        "weaknesses": [
+            "Ground"
+        ],
+        "strengths": [
+            "Electric",
+            "Flying"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 13,
+        "name": "Psychic",
+        "weaknesses": [
+            "Bug"
+        ],
+        "strengths": [
+            "Fighting",
+            "Psychic"
+        ],
+        "effectless": [
+            "Ghost"
+        ]
+    },{
+        "type_id": 14,
+        "name": "Ice",
+        "weaknesses": [
+            "Fighting",
+            "Fire",
+            "Rock"
+        ],
+        "strengths": [
+            "Ice",
+            "Water"
+        ],
+        "effectless": [
+
+        ]
+    },{
+        "type_id": 15,
+        "name": "Dragon",
+        "weaknesses": [
+            "Ice"
+        ],
+        "strengths": [
+
+        ],
+        "effectless": [
+
+        ]
+    }]
