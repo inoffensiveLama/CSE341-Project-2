@@ -1,5 +1,6 @@
 const typesController = {};
 const mongodb = require("../data/database");
+const { check, query, param, validationResult } = require('express-validator');
 
 
 typesController.getAll = async (req, res) => {
