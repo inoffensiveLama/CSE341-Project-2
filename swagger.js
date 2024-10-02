@@ -5,7 +5,7 @@ const doc = {
         title: "User Api",
         description: "Pokemon Api"
     },
-    host: "https://cse341-project-2-zk81.onrender.com",
+    host: "cse341-project-2-zk81.onrender.com",
     schemes: ["https"]
 };
 
