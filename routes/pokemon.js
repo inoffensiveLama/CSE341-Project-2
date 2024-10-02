@@ -28,9 +28,9 @@ router.post(
     check("stats.special_attack").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
     check("stats.special_defense").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
     check("stats.speed").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
-    pokemonController.createEntry
+    pokemonController.createPokemon
 );
-
+ 
 router.put(
     "/:id", 
     param("id").isInt({ min: 1, max: 250 }).withMessage("Pokemon ID must be an integer between 1 and 250"),
@@ -45,13 +45,13 @@ router.put(
     check("stats.special_attack").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
     check("stats.special_defense").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
     check("stats.speed").isInt({ min: 1, max: 250 }).withMessage("HP must be an integer between 1 and 250"),
-    pokemonController.updateContact
+    pokemonController.updatePokemon
 );
 
 router.delete(
     "/:id", 
     param("id").isInt({ min: 1, max: 250 }).withMessage("Pokemon ID must be an integer between 1 and 250"),
-    pokemonController.deleteContact
+    pokemonController.deletePokemon
 );
 
 module.exports = router;

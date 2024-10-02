@@ -4,6 +4,7 @@ const { check, query, param, validationResult } = require('express-validator');
 
 
 pokemonController.getAll = async (req, res) => {
+    //swagger.tags=["Pokemon"]
     const result = await mongodb.getDatabase().db().collection("pokemon").find();
     result.toArray().then((pokemon) => {
         if (pokemon.length === 0) {
@@ -16,6 +17,7 @@ pokemonController.getAll = async (req, res) => {
 
 
 pokemonController.getSingle = async(req, res) => {
+    //swagger.tags=["Pokemon"]
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() })
@@ -32,7 +34,8 @@ pokemonController.getSingle = async(req, res) => {
 };
 
 
-pokemonController.createEntry = async (req, res) => {
+pokemonController.createPokemon = async (req, res) => {
+    //swagger.tags=["Pokemon"]
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
@@ -53,7 +56,8 @@ pokemonController.createEntry = async (req, res) => {
 };
 
 
-pokemonController.updateContact = async (req, res) => {
+pokemonController.updatePokemon = async (req, res) => {
+    //swagger.tags=["Pokemon"]
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
@@ -75,7 +79,8 @@ pokemonController.updateContact = async (req, res) => {
 };
 
 
-pokemonController.deleteContact = async (req, res) => {
+pokemonController.deletePokemon = async (req, res) => {
+    //swagger.tags=["Pokemon"]
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
