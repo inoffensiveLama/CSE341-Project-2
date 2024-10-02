@@ -41,11 +41,11 @@ typesController.createType = async (req, res) => {
         return res.status(422).json({ errors: errors.array() });
     }
     const type = {
-        type_id: req.body.pokemon_id,
+        type_id: req.body.type_id,
         name: req.body.name,
-        weaknesses: req.body.types,
-        strengths: req.body.evolutions,
-        effectless: req.body.stats
+        weaknesses: req.body.weaknesses,
+        strengths: req.body.strengths,
+        effectless: req.body.effectless
     };
     const result = await mongodb.getDatabase().db().collection("types").insertOne(type);
     if (result.acknowledged) {
@@ -64,11 +64,11 @@ typesController.updateType = async (req, res) => {
     }
     const typeId = parseInt(req.params.id);
     const type = {
-        type_id: req.body.pokemon_id,
+        type_id: req.body.type_id,
         name: req.body.name,
-        weaknesses: req.body.types,
-        strengths: req.body.evolutions,
-        effectless: req.body.stats
+        weaknesses: req.body.weaknesses,
+        strengths: req.body.strengths,
+        effectless: req.body.effectless
     };
     const result = await mongodb.getDatabase().db().collection("types").replaceOne({type_id: typeId}, type);
     if (result.modifiedCount > 0) {
