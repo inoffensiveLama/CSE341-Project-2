@@ -2,6 +2,10 @@ const { check, query, param, validationResult } = require('express-validator');
 const validation = {};
 
 
+/*
+POKEMON VALIDATION RULES
+*/
+
 validation.pokemonGetSingleValidationRules = () => {
     return [
         param("id").isInt({ min: 1, max: 250 }).withMessage("Pokemon ID must be an integer between 1 and 250")
@@ -46,6 +50,47 @@ validation.pokemonDeleteValidationRules = () => {
         param("id").isInt({ min: 1, max: 250 }).withMessage("Pokemon ID must be an integer between 1 and 250")
     ]
 }
+
+/*
+TYPES VALIDATION RULES
+*/
+
+validation.typesGetSingleValidationRules = () => {
+    return [
+        param("id").isInt({ min: 1, max: 250 }).withMessage("Type ID must be an integer between 1 and 250")
+    ]
+}
+
+validation.typesCreateValidationRules = () => {
+    return [
+        check("type_id").isInt({ min: 1, max: 250 }).withMessage("Type ID must be an integer between 1 and 250"),
+        check("name").isString().isLength({min: 1, max: 40}).withMessage("Name must be a string with 1 to 40 characters"),
+        check("weaknesses").isArray({min: 0, max: 5}).withMessage("Weaknesses must be an array with 0 to 5 types"),
+        check("strengths").isArray({min: 0, max: 5}).withMessage("Strengths must be an array with 0 to 5 types"),
+        check("effectless").isArray({min: 0, max: 5}).withMessage("Effectless must be an array with 0 to 5 types")
+    ]
+}
+
+validation.typesUpdateValidationRules = () => {
+    return [
+        param("id").isInt({ min: 1, max: 250 }).withMessage("Type ID must be an integer between 1 and 250"),
+        check("type_id").isInt({ min: 1, max: 250 }).withMessage("Type ID must be an integer between 1 and 250"),
+        check("name").isString().isLength({min: 1, max: 40}).withMessage("Name must be a string with 1 to 40 characters"),
+        check("weaknesses").isArray({min: 0, max: 5}).withMessage("Weaknesses must be an array with 0 to 5 types"),
+        check("strengths").isArray({min: 0, max: 5}).withMessage("Strengths must be an array with 0 to 5 types"),
+        check("effectless").isArray({min: 0, max: 5}).withMessage("Effectless must be an array with 0 to 5 types")
+    ]
+}
+
+validation.typesDeleteValidationRules = () => {
+    return [
+        param("id").isInt({ min: 1, max: 250 }).withMessage("Type ID must be an integer between 1 and 250")
+    ]
+}
+
+/*
+VALIDATION PROCESS
+*/
 
 validation.validate = (req, res, next) => {
     const errors = validationResult(req)

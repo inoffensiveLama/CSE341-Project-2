@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { check, query, param, validationResult } = require('express-validator');
 
 const pokemonController = require("../controllers/pokemonController");
 
