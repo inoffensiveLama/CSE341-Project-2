@@ -3,7 +3,9 @@ const router = express.Router();
 
 const typesController = require("../controllers/typesController");
 
-const validation = require("../controllers/validation");
+const validation = require("../middleware/validation");
+
+const { isAuthenticated } = require("../middleware/authenticate");
 
 router.get(
     "/", 
@@ -18,21 +20,24 @@ router.get(
 );
 
 router.post(
-    "/", 
+    "/",  
+    isAuthenticated,
     validation.typesCreateValidationRules(),
     validation.validate,
     typesController.createType
 );
 
 router.put(
-    "/:id", 
+    "/:id",  
+    isAuthenticated,
     validation.typesUpdateValidationRules(),
     validation.validate,
     typesController.updateType
 );
 
 router.delete(
-    "/:id", 
+    "/:id",  
+    isAuthenticated,
     validation.typesDeleteValidationRules(),
     validation.validate,
     typesController.deleteType

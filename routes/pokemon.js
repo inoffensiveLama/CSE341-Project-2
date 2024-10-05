@@ -3,7 +3,9 @@ const router = express.Router();
 
 const pokemonController = require("../controllers/pokemonController");
 
-const validation = require("../controllers/validation");
+const validation = require("../middleware/validation");
+
+const { isAuthenticated } = require("../middleware/authenticate");
 
 router.get(
     "/", 
@@ -19,20 +21,23 @@ router.get(
 
 router.post(
     "/", 
+    isAuthenticated,
     validation.pokemonCreateValidationRules(),
     validation.validate,
     pokemonController.createPokemon
 );
  
 router.put(
-    "/:id", 
+    "/:id",  
+    isAuthenticated,
     validation.pokemonUpdateValidationRules(),
     validation.validate,
     pokemonController.updatePokemon
 );
 
 router.delete(
-    "/:id", 
+    "/:id",  
+    isAuthenticated,
     validation.pokemonDeleteValidationRules(),
     validation.validate,
     pokemonController.deletePokemon
