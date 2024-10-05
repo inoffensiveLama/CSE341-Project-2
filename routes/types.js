@@ -34,7 +34,7 @@ router.put(
 router.delete(
     "/:id", 
     validation.typesDeleteValidationRules(),
-    validtaion.validate,
+    validation.validate,
     typesController.deleteType
 );
 
